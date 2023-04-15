@@ -3,7 +3,7 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-pr:
+trigger:
 - main
 
 pool:
@@ -56,7 +56,7 @@ steps:
   displayName: 'scanning the base image'
 
 - script: |
-    trivy config K8s
+    trivy config k8s
   displayName: 'scanning the manisfest files'
 
 - script: |
