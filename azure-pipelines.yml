@@ -60,5 +60,5 @@ steps:
 
 - script: |
     echo $(DOCKER_HUB_PASSWORD) | sudo docker login --username $(DOCKER_HUB_USERNAME) --password-stdin
-    sudo docker push incharagowda/frontend-project:1.0.1
+    sudo docker push incharagowda/frontend-project:1.0.1
   displayName: 'Login to registry and Push the image'
