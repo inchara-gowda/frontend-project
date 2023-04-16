@@ -62,3 +62,18 @@ steps:
     echo $(DOCKER_HUB_PASSWORD) | sudo docker login --username $(DOCKER_HUB_USERNAME) --password-stdin
     sudo docker push incharagowda/frontend-project:1.0.0 
   displayName: 'logging into registry using Variables & pushing the image'
+
+- script: |
+    echo $(DOCKER_HUB_PASSWORD) | sudo docker login --username $(DOCKER_HUB_USERNAME) --password-stdin
+    sudo docker push incharagowda/frontend-project:1.0.0 
+  displayName: 'logging into registry using Variables & pushing the image'
+
+- task: KubernetesManifest@1
+  displayName: Deploy GKE cluster
+  inputs:
+    action: 'deploy'
+    connectionType: 'kubernetesServiceConnection'
+    kubernetesServiceConnection: 'gke-development'
+    manifests: |
+      k8s/simple/frontend-deployment.yaml
+      k8s/simple/frontend-service.yaml
