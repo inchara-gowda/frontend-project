@@ -54,14 +54,9 @@ steps:
     trivy config k8s
   displayName: 'scanning the manisfest files'
 
-- script: |
-    sudo docker build -t incharagowda/frontend-project:1.0.0 .
-  displayName: 'Build the container image'
-
 #- script: |
-#    echo $(DOCKER_HUB_PASSWORD) | sudo docker login --username $(DOCKER_HUB_USERNAME) --password-stdin
-#    sudo docker push incharagowda/frontend-project:1.0.0 
-#  displayName: 'logging into registry using Variables & pushing the image'
+#    sudo docker build -t incharagowda/frontend-project:1.0.0 .
+#  displayName: 'Build the container image'
 
 #- script: |
 #    echo $(DOCKER_HUB_PASSWORD) | sudo docker login --username $(DOCKER_HUB_USERNAME) --password-stdin
