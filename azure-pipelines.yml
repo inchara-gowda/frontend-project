@@ -55,15 +55,10 @@ steps:
   displayName: 'scanning the manisfest files'
 
 - script: |
-    sudo docker build -t incharagowda/frontend-project:1.0.1 .
+    sudo docker build -t inchara-gowda/frontend-project:1.0.0 .
   displayName: 'Build the container image'
 
-#- script: |
-#    echo $(DOCKER_HUB_PASSWORD) | sudo docker login --username $(DOCKER_HUB_USERNAME) --password-stdin
-#    sudo docker push incharagowda/frontend-project:1.0.1
-#  displayName: 'Login to registry and Push the image'
-
 - script: |
-    sudo docker login --username $(DOCKER_HUB_USERNAME) --password-stdin
-    sudo docker push incharagowda/frontend-project:1.0.1
+    echo $(DOCKER_HUB_PASSWORD) | sudo docker login --username $(DOCKER_HUB_USERNAME) --password-stdin
+    sudo docker push inchara-gowda/frontend-project:1.0.0
   displayName: 'Login to registry and Push the image'
