@@ -68,7 +68,8 @@ steps:
     containerRegistry: docker-hub
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
-    tags: incharagowda/frontend-project:1.0.0 
+    repository: incharagowda/frontend-project
+    tags: 1.0.0
 
 - task: KubernetesManifest@1
   displayName: Deploy GKE cluster
